@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,30 +8,33 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
     <link rel="stylesheet" href="assets/styles/styles.css">
 </head>
+
 <body>
 
     <!-- Header y Navegación -->
     <header class="header">
         <div class="wrap nav">
             <a href="#top" class="logo" aria-label="Inicio GreenAlert">
-                <img src="assets/images/logo.jpg" alt="Logo GreenAlert" width="36" height="36" style="border-radius:8px;object-fit:cover;">
+                <img src="assets/images/logo.jpg" alt="Logo GreenAlert" width="36" height="36"
+                    style="border-radius:8px;object-fit:cover;">
                 GreenAlert
             </a>
             <ul id="menu">
                 <li><a href="#como">Cómo funciona</a></li>
-                <li><a href="#segmentos">Segmentos</a></li>
-                <li><a href="#tecnologia">Tecnología</a></li>
-                <li><a href="#mapa">Mapa en vivo</a></li>
+                <li><a href="#mapa">Mapa</a></li>
+                <li><a href="#comunidad">Comunidad</a></li>
                 <li><a href="#mision">Misión</a></li>
             </ul>
             <div style="display:flex;gap:10px;align-items:center">
                 <div class="um">
                     <button class="btn" id="authBtn" aria-haspopup="menu" aria-expanded="false">Iniciar sesión</button>
                     <div class="umenu" id="uMenu" role="menu" hidden>
+                        <button role="menuitem" id="miMuniPanel" hidden>🏛️ Panel de Despacho Municipal</button>
                         <button role="menuitem" id="miReport">Generar reporte</button>
                         <button role="menuitem" id="miMine">Ver mis reportes</button>
                         <button role="menuitem" id="miOut">Cerrar sesión</button>
@@ -50,7 +54,9 @@
                 <div class="hero-content">
                     <span class="chip"><i></i>Mapa ciudadano en vivo</span>
                     <h1 style="margin-top:18px">Ciudades más limpias, comunidades más fuertes</h1>
-                    <p>Captura el foco de contaminación desde tu dispositivo móvil. Nuestra Inteligencia Artificial clasifica el residuo y geolocaliza la incidencia en tiempo real para optimizar la respuesta municipal.</p>
+                    <p>Captura el foco de contaminación desde tu dispositivo móvil. Nuestra Inteligencia Artificial
+                        clasifica el residuo y geolocaliza la incidencia en tiempo real para optimizar la respuesta
+                        municipal.</p>
                     <div class="acts">
                         <button class="btn p" data-report>Reportar problema ambiental →</button>
                         <a class="btn" href="#mapa">Explorar mapa</a>
@@ -79,9 +85,18 @@
         <!-- Sección Estadísticas de Impacto -->
         <div class="stats">
             <div class="wrap">
-                <div><div class="num" data-n="1500" data-p="+">0</div><div class="lab">Reportes realizados</div></div>
-                <div><div class="num" data-n="15" data-p="+">0</div><div class="lab">Zonas monitoreadas</div></div>
-                <div><div class="num" data-n="68" data-s="%">0</div><div class="lab">Menos tiempo de respuesta</div></div>
+                <div>
+                    <div class="num" data-n="1500" data-p="+">0</div>
+                    <div class="lab">Reportes realizados</div>
+                </div>
+                <div>
+                    <div class="num" data-n="15" data-p="+">0</div>
+                    <div class="lab">Zonas monitoreadas</div>
+                </div>
+                <div>
+                    <div class="num" data-n="68" data-s="%">0</div>
+                    <div class="lab">Menos tiempo de respuesta</div>
+                </div>
             </div>
         </div>
 
@@ -91,10 +106,29 @@
                 <span class="chip">Simple, transparente y efectivo</span>
                 <h2>Cuatro pasos, de tu celular a la calle limpia</h2>
                 <div class="steps">
-                    <div class="card"><div class="ic">1</div><h3>Reporta</h3><p>Captura una fotografía del residuo en segundos; tu geolocalización precisa se asocia automáticamente.</p></div>
-                    <div class="card"><div class="ic">2</div><h3>Clasificación IA</h3><p>Modelos de visión por computadora reconocen el tipo de residuo, estiman su volumen y nivel de severidad.</p></div>
-                    <div class="card"><div class="ic">3</div><h3>Publicación abierta</h3><p>La incidencia se publica en el mapa telegráfico en vivo accesible para toda la comunidad.</p></div>
-                    <div class="card"><div class="ic">4</div><h3>Resolución ágil</h3><p>La municipalidad programa cuadrillas de recojo prioritarias y los vecinos comprueban la atención del foco.</p></div>
+                    <div class="card">
+                        <div class="ic">1</div>
+                        <h3>Reporta</h3>
+                        <p>Captura una fotografía del residuo en segundos; tu geolocalización precisa se asocia
+                            automáticamente.</p>
+                    </div>
+                    <div class="card">
+                        <div class="ic">2</div>
+                        <h3>Clasificación IA</h3>
+                        <p>Modelos de visión por computadora reconocen el tipo de residuo, estiman su volumen y nivel de
+                            severidad.</p>
+                    </div>
+                    <div class="card">
+                        <div class="ic">3</div>
+                        <h3>Publicación abierta</h3>
+                        <p>La incidencia se publica en el mapa telegráfico en vivo accesible para toda la comunidad.</p>
+                    </div>
+                    <div class="card">
+                        <div class="ic">4</div>
+                        <h3>Resolución ágil</h3>
+                        <p>La municipalidad programa cuadrillas de recojo prioritarias y los vecinos comprueban la
+                            atención del foco.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -102,10 +136,22 @@
         <!-- Banda de Métricas Ambientales -->
         <div class="band">
             <div class="wrap">
-                <div><div class="num" data-n="1500" data-p="+">0</div><div class="lab">Reportes realizados</div></div>
-                <div><div class="num" data-n="12650">0</div><div class="lab">Kilos de basura recogidos</div></div>
-                <div><div class="num" data-n="24" data-s="%">0</div><div class="lab">Contaminación disminuida</div></div>
-                <div><div class="num" data-n="15" data-p="+">0</div><div class="lab">Zonas monitoreadas</div></div>
+                <div>
+                    <div class="num" data-n="1500" data-p="+">0</div>
+                    <div class="lab">Reportes realizados</div>
+                </div>
+                <div>
+                    <div class="num" data-n="12650">0</div>
+                    <div class="lab">Kilos de basura recogidos</div>
+                </div>
+                <div>
+                    <div class="num" data-n="24" data-s="%">0</div>
+                    <div class="lab">Contaminación disminuida</div>
+                </div>
+                <div>
+                    <div class="num" data-n="15" data-p="+">0</div>
+                    <div class="lab">Zonas monitoreadas</div>
+                </div>
             </div>
         </div>
 
@@ -119,23 +165,30 @@
                         <div class="ic">👥</div>
                         <h3>Para Ciudadanos y Comunidades Vecinales</h3>
                         <p class="sub" style="font-size:.9rem;line-height:1.6">
-                            Empoderamiento directo y participación cívica sin intermediarios burocráticos. Los vecinos cuentan con un canal transparente donde verificar en tiempo real los tiempos de atención municipal.
+                            Empoderamiento directo y participación cívica sin intermediarios burocráticos. Los vecinos
+                            cuentan con un canal transparente donde verificar en tiempo real los tiempos de atención
+                            municipal.
                         </p>
                         <hr>
                         <div class="ok">✓ Registro fotográfico georreferenciado e inmutable</div>
-                        <div class="ok" style="margin-top:6px">✓ Notificaciones sobre el estado y resolución de la alerta</div>
+                        <div class="ok" style="margin-top:6px">✓ Notificaciones sobre el estado y resolución de la
+                            alerta</div>
                         <div class="ok" style="margin-top:6px">✓ Mayor rendición de cuentas y entornos limpios</div>
                     </div>
                     <div class="card">
                         <div class="ic">🏛️</div>
                         <h3>Para Municipalidades y Entidades de Limpieza Pública</h3>
                         <p class="sub" style="font-size:.9rem;line-height:1.6">
-                            Gestión operativa basada en datos analíticos e inteligencia artificial. Las autoridades optimizan rutas de camiones recolectores, priorizan focos infecciosos urgentes y reducen costos operativos.
+                            Gestión operativa basada en datos analíticos e inteligencia artificial. Las autoridades
+                            optimizan rutas de camiones recolectores, priorizan focos infecciosos urgentes y reducen
+                            costos operativos.
                         </p>
                         <hr>
                         <div class="ok">↘ Hasta 35% de ahorro en costos logísticos de saneamiento</div>
-                        <div class="ok" style="margin-top:6px">↘ Reducción del 68% en tiempos de respuesta operativa</div>
-                        <div class="ok" style="margin-top:6px">✓ Tablero centralizado de telemetría e incidencias urbanas</div>
+                        <div class="ok" style="margin-top:6px">↘ Reducción del 68% en tiempos de respuesta operativa
+                        </div>
+                        <div class="ok" style="margin-top:6px">✓ Tablero centralizado de telemetría e incidencias
+                            urbanas</div>
                     </div>
                 </div>
             </div>
@@ -146,12 +199,33 @@
             <div class="wrap">
                 <span class="chip">Tecnología cívica de precisión</span>
                 <h2>Inteligencia artificial para un ecosistema urbano sostenible</h2>
-                <p class="sub">Nuestros algoritmos analizan el tipo de residuo, estimación de masa y prioridad sanitaria para acelerar la toma de decisiones:</p>
+                <p class="sub">Nuestros algoritmos analizan el tipo de residuo, estimación de masa y prioridad sanitaria
+                    para acelerar la toma de decisiones:</p>
                 <div class="steps">
-                    <div class="card"><div class="ic">🧴</div><h3>Plásticos y PET</h3><p>Detecta acumulación de botellas y envases reciclables para derivación a asociaciones de recicladores.</p></div>
-                    <div class="card"><div class="ic">🍂</div><h3>Residuos Orgánicos</h3><p>Identifica materia en descomposición y riesgo de lixiviados para recojo prioritario antes de emitir gases nocivos.</p></div>
-                    <div class="card"><div class="ic">🧱</div><h3>Escombros y Desmonte</h3><p>Calcula volumen aproximado y necesidad de maquinaria pesada o volquetes para limpieza expedita.</p></div>
-                    <div class="card"><div class="ic">⚠️</div><h3>Foco Infeccioso</h3><p>Evalúa peligro por vectores de transmisión, malos olores y proximidad a escuelas o centros de salud.</p></div>
+                    <div class="card">
+                        <div class="ic">🧴</div>
+                        <h3>Plásticos y PET</h3>
+                        <p>Detecta acumulación de botellas y envases reciclables para derivación a asociaciones de
+                            recicladores.</p>
+                    </div>
+                    <div class="card">
+                        <div class="ic">🍂</div>
+                        <h3>Residuos Orgánicos</h3>
+                        <p>Identifica materia en descomposición y riesgo de lixiviados para recojo prioritario antes de
+                            emitir gases nocivos.</p>
+                    </div>
+                    <div class="card">
+                        <div class="ic">🧱</div>
+                        <h3>Escombros y Desmonte</h3>
+                        <p>Calcula volumen aproximado y necesidad de maquinaria pesada o volquetes para limpieza
+                            expedita.</p>
+                    </div>
+                    <div class="card">
+                        <div class="ic">⚠️</div>
+                        <h3>Foco Infeccioso</h3>
+                        <p>Evalúa peligro por vectores de transmisión, malos olores y proximidad a escuelas o centros de
+                            salud.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -163,8 +237,56 @@
                     <div>
                         <span class="chip">Telemetría ciudadana en tiempo real</span>
                         <h2>Explorador interactivo de incidencias</h2>
-                        <p class="sub">Selecciona un punto en el mapa para inspeccionar el diagnóstico de IA, severidad y estado de atención.</p>
+                        <p class="sub">Selecciona un punto en el mapa o busca por distrito para inspeccionar el
+                            diagnóstico de IA, severidad y estado.</p>
                     </div>
+                    <!-- Conteo de estados (US26) -->
+                    <div class="status-counters" id="statusCounters">
+                        <div class="counter-pill"><i
+                                style="width:8px;height:8px;border-radius:50%;background:var(--red);display:inline-block"></i>
+                            Críticos: <span id="cntCritical">0</span></div>
+                        <div class="counter-pill"><i
+                                style="width:8px;height:8px;border-radius:50%;background:var(--yel);display:inline-block"></i>
+                            En atención: <span id="cntProcess">0</span></div>
+                        <div class="counter-pill"><i
+                                style="width:8px;height:8px;border-radius:50%;background:var(--ok);display:inline-block"></i>
+                            Solucionados: <span id="cntDone">0</span></div>
+                    </div>
+                </div>
+
+                <!-- Barra de herramientas (US17, US18, US19, US20, US21) -->
+                <div class="map-toolbar">
+                    <div class="search-box">
+                        <span>🔍</span>
+                        <input id="mapSearch" type="text"
+                            placeholder="Buscar por distrito o calle (ej. San Isidro, Miraflores)..."
+                            autocomplete="off">
+                    </div>
+                    <div class="filter-row">
+                        <!-- Filtro por tipo de residuo (US17) -->
+                        <select id="typeFilter" class="filter-select" aria-label="Filtrar por tipo de residuo">
+                            <option value="all">Todos los residuos</option>
+                            <option value="Plásticos y PET">Plásticos y PET</option>
+                            <option value="Orgánicos">Orgánicos</option>
+                            <option value="Escombros">Escombros</option>
+                            <option value="Foco infeccioso">Foco infeccioso</option>
+                        </select>
+
+                        <!-- Filtro Zonas vulnerables: colegios y mercados (US20) -->
+                        <button class="tool-toggle" id="vulnFilter">🏫 Zonas vulnerables</button>
+
+                        <!-- Mapa de calor (US19) -->
+                        <button class="tool-toggle" id="heatToggle">🔥 Concentración</button>
+
+                        <!-- Selector de vista Mapa / Lista (US21) -->
+                        <div style="display:flex;border:1px solid var(--line);border-radius:10px;overflow:hidden">
+                            <button class="tool-toggle active" id="viewMapBtn" style="border:none;border-radius:0">🗺️
+                                Mapa</button>
+                            <button class="tool-toggle" id="viewListBtn" style="border:none;border-radius:0">📋
+                                Lista</button>
+                        </div>
+                    </div>
+                    <!-- Pestañas de estado (US17) -->
                     <div class="tabs" id="tabs" role="tablist">
                         <button class="on" data-f="all">Todos</button>
                         <button data-f="c">Crítico</button>
@@ -172,9 +294,53 @@
                         <button data-f="a">Atendido</button>
                     </div>
                 </div>
-                <div class="xgrid">
+
+                <div class="xgrid" id="mapGrid">
                     <div id="bigMap" aria-label="Mapa interactivo de incidentes ambientales"></div>
                     <aside class="panel" id="panel" aria-live="polite"></aside>
+                </div>
+
+                <!-- Vista de Lista alternativa (US21) -->
+                <div id="listGrid" class="incidents-list" style="display:none;margin-top:16px;"></div>
+            </div>
+        </section>
+
+        <!-- Sección Comunidad y Jornadas de Limpieza (US56, US57, US58) -->
+        <section class="section" id="comunidad" style="background:var(--g0);padding-top:60px;padding-bottom:60px;">
+            <div class="wrap">
+                <span class="chip">Acción comunitaria directa</span>
+                <h2>Jornadas de limpieza y recuperación ambiental</h2>
+                <p class="sub">Organizaciones vecinales convocan a ciudadanos para limpiar y erradicar puntos críticos
+                    de forma solidaria.</p>
+                <div class="act-grid" id="actGrid">
+                    <!-- Rendered dynamically by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Ranking de Vecinos Destacados (US47) -->
+        <section class="section" id="ranking" style="padding-top:60px;padding-bottom:60px;">
+            <div class="wrap">
+                <span class="chip">Liderazgo ciudadano</span>
+                <h2>Vecinos destacados del mes</h2>
+                <p class="sub">Reconocimiento a los miembros de la comunidad que más reportes validan y respaldan
+                    activamente en sus barrios.</p>
+                <div style="overflow-x:auto">
+                    <table class="rank-table" id="rankTable">
+                        <thead>
+                            <tr>
+                                <th>Puesto</th>
+                                <th>Vecino(a)</th>
+                                <th>Distrito</th>
+                                <th>Reportes generados</th>
+                                <th>Respaldos comunitarios</th>
+                                <th>Insignia</th>
+                            </tr>
+                        </thead>
+                        <tbody id="rankBody">
+                            <!-- Rendered by JS -->
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </section>
@@ -187,14 +353,18 @@
                         <span class="chip">Nuestra misión</span>
                         <h3 style="font-size:1.4rem;color:var(--g9)">Empoderamiento cívico y eficiencia municipal</h3>
                         <p class="sub" style="font-size:.9rem;line-height:1.6">
-                            Brindar a la ciudadanía una plataforma móvil colaborativa que transforme la indignación ciudadana ante la basura en acción resolutiva transparente, dotando a los municipios de analítica territorial precisa.
+                            Brindar a la ciudadanía una plataforma móvil colaborativa que transforme la indignación
+                            ciudadana ante la basura en acción resolutiva transparente, dotando a los municipios de
+                            analítica territorial precisa.
                         </p>
                     </div>
                     <div class="card">
                         <span class="chip">Visión Sostenible</span>
                         <h3 style="font-size:1.4rem;color:var(--g9)">Ciudades inteligentes con huella positiva</h3>
                         <p class="sub" style="font-size:.9rem;line-height:1.6">
-                            Consolidar la plataforma cívica referente en gestión ambiental y mitigación de huella ecológica a nivel nacional, promoviendo la transición hacia ciudades inteligentes y carbono neutrales.
+                            Consolidar la plataforma cívica referente en gestión ambiental y mitigación de huella
+                            ecológica a nivel nacional, promoviendo la transición hacia ciudades inteligentes y carbono
+                            neutrales.
                         </p>
                     </div>
                 </div>
@@ -202,16 +372,67 @@
                 <h2 style="margin-top:70px">Testimonios de nuestra comunidad</h2>
                 <div class="quotes">
                     <div class="card">
-                        <p>“Antes enviábamos fotos a grupos vecinales o reclamos que quedaban olvidados. Con GreenAlert veo el marcador cambiar de color cuando la cuadrilla recoge los desperdicios.”</p>
-                        <div class="who"><i>V</i><div><b>Valeria Soto</b><br><span style="color:var(--mut)">Vecina - Centro Histórico</span></div></div>
+                        <p>“Antes enviábamos fotos a grupos vecinales o reclamos que quedaban olvidados. Con GreenAlert
+                            veo el marcador cambiar de color cuando la cuadrilla recoge los desperdicios.”</p>
+                        <div class="who"><i>V</i>
+                            <div><b>Valeria Soto</b><br><span style="color:var(--mut)">Vecina - Centro Histórico</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="card d">
-                        <p>“La clasificación de severidad nos permite planificar los turnos matutinos con criterio de urgencia sanitaria, evitando viajes innecesarios y optimizando combustible.”</p>
-                        <div class="who"><i>M</i><div><b>Ing. Marco Rivas</b><br>Gerencia de Gestión Ambiental Municipal</div></div>
+                        <p>“La clasificación de severidad nos permite planificar los turnos matutinos con criterio de
+                            urgencia sanitaria, evitando viajes innecesarios y optimizando combustible.”</p>
+                        <div class="who"><i>M</i>
+                            <div><b>Ing. Marco Rivas</b><br>Gerencia de Gestión Ambiental Municipal</div>
+                        </div>
                     </div>
                     <div class="card">
-                        <p>“La visibilidad colectiva de los puntos críticos fomenta la corresponsabilidad. Todos los vecinos podemos monitorear el cuidado de nuestras áreas verdes.”</p>
-                        <div class="who"><i>C</i><div><b>Camila Mendoza</b><br><span style="color:var(--mut)">Voluntaria ambiental</span></div></div>
+                        <p>“La visibilidad colectiva de los puntos críticos fomenta la corresponsabilidad. Todos los
+                            vecinos podemos monitorear el cuidado de nuestras áreas verdes.”</p>
+                        <div class="who"><i>C</i>
+                            <div><b>Camila Mendoza</b><br><span style="color:var(--mut)">Voluntaria ambiental</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Preguntas Frecuentes FAQ (Heurística #10 Ayuda y Documentación) -->
+        <section class="section reveal" id="faq" style="background:var(--g0);padding-top:60px;padding-bottom:60px;">
+            <div class="wrap">
+                <span class="chip">Centro de ayuda y transparencia</span>
+                <h2>Preguntas Frecuentes</h2>
+                <p class="sub">Conoce cómo opera la plataforma, tiempos de respuesta municipal y cómo protegemos tu
+                    privacidad.</p>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-q" type="button">¿Cómo se entera la municipalidad de mi reporte? <span
+                                class="arrow">▼</span></button>
+                        <div class="faq-a">GreenAlert sincroniza en tiempo real los incidentes geolocalizados en el mapa
+                            telegráfico municipal, priorizando según el diagnóstico de severidad emitido por la IA para
+                            el despacho de cuadrillas.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q" type="button">¿Qué ocurre si reporto de forma anónima? <span
+                                class="arrow">▼</span></button>
+                        <div class="faq-a">Tu privacidad está 100% protegida. Al activar 'Ocultar mis datos', tu nombre
+                            y correo se mantienen privados en el mapa y en la ficha pública, mostrándote únicamente como
+                            'Vecino anónimo'.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q" type="button">¿Cómo evalúa la Inteligencia Artificial la severidad de los
+                            residuos? <span class="arrow">▼</span></button>
+                        <div class="faq-a">El algoritmo analiza el volumen volumétrico aproximado, el tipo de residuo y
+                            riesgos sanitarios adicionales como lixiviados, plagas o cercanía a escuelas, asignando
+                            prioridad Alta, Media o Baja automáticamente.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q" type="button">¿Puedo dar seguimiento a los reportes que he realizado?
+                            <span class="arrow">▼</span></button>
+                        <div class="faq-a">Sí. En la sección 'Ver mis reportes' cuentas con una línea de tiempo dinámica
+                            que te indica si tu alerta está Pendiente, En atención por la cuadrilla o Solucionada y
+                            verificada.</div>
                     </div>
                 </div>
             </div>
@@ -223,15 +444,17 @@
                 <div>
                     <span class="chip" style="background:#1c6b45;color:#b7f0d0">Tu calle también cuenta</span>
                     <h2 style="margin-top:16px">¿Identificaste un foco de contaminación en tu distrito?</h2>
-                    <p>Actúa de inmediato. Con GreenAlert, tu cámara activa un informe clasificado que se sincroniza con el mapa y notifica a las autoridades correspondientes.</p>
+                    <p>Actúa de inmediato. Con GreenAlert, tu cámara activa un informe clasificado que se sincroniza con
+                        el mapa y notifica a las autoridades correspondientes.</p>
                     <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:20px">
                         <button class="btn w" data-report>Iniciar nuevo reporte ahora</button>
                         <button class="btn" id="ctaMine">Ver mis reportes</button>
                     </div>
                 </div>
-                <svg width="170" height="150" viewBox="0 0 170 150" fill="none" stroke="#2f7a55" stroke-width="7" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M8 28l50-18 54 18 50-18v112l-50 18-54-18-50 18z"/>
-                    <path d="M58 10v112M112 28v112"/>
+                <svg width="170" height="150" viewBox="0 0 170 150" fill="none" stroke="#2f7a55" stroke-width="7"
+                    stroke-linejoin="round" aria-hidden="true">
+                    <path d="M8 28l50-18 54 18 50-18v112l-50 18-54-18-50 18z" />
+                    <path d="M58 10v112M112 28v112" />
                 </svg>
             </div>
         </div>
@@ -242,45 +465,118 @@
     <footer class="footer">
         <div class="wrap">
             <a href="#top" class="logo" style="font-size:1rem">
-                <img src="assets/images/logo.jpg" alt="Logo GreenAlert" width="30" height="30" style="border-radius:6px;object-fit:cover;">
+                <img src="assets/images/logo.jpg" alt="Logo GreenAlert" width="30" height="30"
+                    style="border-radius:6px;object-fit:cover;">
                 GreenAlert
             </a>
-            <span>© 2026 GreenAlert. Todos los derechos reservados.</span>
+            <span>© 2026 GreenAlert — Proyecto de Interacción Humano-Computador (IHC). Todos los derechos
+                reservados.</span>
         </div>
     </footer>
 
     <!-- Modales Interactivos -->
 
-    <!-- Modal de Autenticación (Login / Registro) -->
+    <!-- Modal de Autenticación (Login / Registro / Roles Ciudadano vs Municipalidad US28, US29) -->
     <div class="ov" id="authOv" aria-hidden="true">
         <div class="modal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
             <button class="x" data-close aria-label="Cerrar modal de autenticación">×</button>
             <h3 id="authTitle">Iniciar sesión</h3>
-            <p class="sub" id="authSub" style="font-size:.85rem">Accede a tu cuenta para registrar reportes y dar seguimiento a tus incidencias.</p>
+            <p class="sub" id="authSub" style="font-size:.85rem">Elige tu tipo de perfil para acceder a las herramientas correspondientes.</p>
+
+            <!-- Selector de Rol: Ciudadano vs Municipalidad -->
+            <label>Tipo de cuenta / perfil</label>
+            <div class="role-switch" id="roleSwitch">
+                <button type="button" class="role-btn active" data-role="citizen">👤 Ciudadano / Vecino</button>
+                <button type="button" class="role-btn" data-role="municipality">🏛️ Municipalidad</button>
+            </div>
+
             <div id="nameWrap" hidden>
-                <label for="aName">Nombre completo</label>
+                <label for="aName" id="aNameLabel">Nombre completo</label>
                 <input id="aName" type="text" autocomplete="name" placeholder="Tu nombre">
             </div>
-            <label for="aMail">Correo electrónico</label>
+
+            <!-- Campos exclusivos para registro de Municipalidad -->
+            <div id="muniWrap" hidden>
+                <label for="aMuniDist">Entidad / Municipalidad Distrital</label>
+                <select id="aMuniDist">
+                    <option value="Municipalidad de San Isidro">Municipalidad de San Isidro</option>
+                    <option value="Municipalidad de Miraflores">Municipalidad de Miraflores</option>
+                    <option value="Municipalidad de Cercado de Lima">Municipalidad de Cercado de Lima</option>
+                    <option value="Municipalidad de Jesús María">Municipalidad de Jesús María</option>
+                    <option value="Municipalidad de Lince">Municipalidad de Lince</option>
+                    <option value="Municipalidad de San Borja">Municipalidad de San Borja</option>
+                    <option value="Municipalidad de Barranco">Municipalidad de Barranco</option>
+                </select>
+                <label for="aMuniCode">Código Institucional o RUC</label>
+                <input id="aMuniCode" type="text" placeholder="Ej. 20131370998">
+            </div>
+
+            <label for="aMail" id="aMailLabel">Correo electrónico</label>
             <input id="aMail" type="email" autocomplete="email" placeholder="ejemplo@correo.com">
             <label for="aPass">Contraseña</label>
             <input id="aPass" type="password" autocomplete="current-password" placeholder="••••••••">
             <div class="err" id="authErr" role="alert"></div>
             <button class="btn p" id="authGo" style="width:100%;justify-content:center;margin-top:8px">Entrar</button>
+            <div style="display:flex;gap:8px;margin-top:8px">
+                <button class="btn" id="guestBtn" type="button"
+                    style="flex:1;justify-content:center;font-size:.8rem;padding:10px">👤 Invitado (Vecino)</button>
+                <button class="btn" id="muniDemoBtn" type="button"
+                    style="flex:1;justify-content:center;font-size:.8rem;padding:10px;border-color:var(--g7);color:var(--g9);background:var(--g0)">🏛️ Demo Municipalidad</button>
+            </div>
             <div class="sw">
-                <span id="swTxt">¿No tienes cuenta?</span> 
+                <span id="swTxt">¿No tienes cuenta?</span>
                 <button id="swBtn" type="button">Regístrate</button>
             </div>
         </div>
     </div>
 
-    <!-- Modal de Generación de Reporte -->
+    <!-- Modal de Generación de Reporte (US01, US02, US03, US04, US05, US06, US07, US08, US31) -->
     <div class="ov" id="repOv" aria-hidden="true">
-        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="repTitle" style="max-width:540px">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="repTitle"
+            style="max-width:560px;max-height:90vh;overflow-y:auto">
             <button class="x" data-close aria-label="Cerrar formulario de reporte">×</button>
             <h3 id="repTitle">Reportar problema ambiental</h3>
-            <p class="sub" style="font-size:.85rem">Adjunta una fotografía, selecciona la categoría y posiciona el punto exacto en el mapa interactivo.</p>
-            
+            <p class="sub" style="font-size:.85rem">Completa la información en segundos. La IA asistirá en la
+                clasificación y prioridad.</p>
+
+            <!-- Alerta de duplicados (US08) -->
+            <div id="dupBox" class="dup-alert" style="display:none">
+                <b>⚠️ Posible reporte duplicado detectado:</b>
+                <span>Existe un reporte activo a menos de 100 metros de este punto.</span>
+                <div style="display:flex;gap:8px">
+                    <button class="btn btn-sm p" id="dupSupportBtn" type="button">Ver y apoyar reporte
+                        existente</button>
+                    <button class="btn btn-sm" id="dupContinueBtn" type="button">Crear de todos modos</button>
+                </div>
+            </div>
+
+            <!-- Evidencia fotográfica (US02) -->
+            <label for="rPhoto">Fotografía de evidencia (hasta 3 fotos)</label>
+            <input id="rPhoto" type="file" accept="image/*" capture="environment">
+            <div id="photoPreviewWrap" style="display:flex;gap:8px;margin:8px 0;align-items:center">
+                <div id="photoThumb"
+                    style="width:70px;height:70px;border-radius:8px;border:1px dashed var(--line);display:none;background-size:cover;background-position:center;position:relative;overflow:hidden">
+                    <div class="photo-scan-line" id="scanLine" style="display:none"></div>
+                    <button id="photoDelBtn" type="button"
+                        style="position:absolute;top:-6px;right:-6px;background:var(--red);color:#fff;border:none;border-radius:50%;width:20px;height:20px;cursor:pointer;font-size:12px;line-height:1">×</button>
+                </div>
+                <small id="photoCount" style="color:var(--mut);font-size:.8rem">0 de 3 fotos adjuntadas</small>
+            </div>
+
+            <!-- Sugerencia asistida de IA (US05) -->
+            <div id="iaBox" class="ia-preview" style="display:none">
+                <div style="display:flex;justify-content:space-between;align-items:center">
+                    <span>🤖 <b>Diagnóstico asistido por IA:</b> <span id="iaType">Foco infeccioso</span></span>
+                    <span class="chip" id="iaConf"
+                        style="background:#fff2f4;color:var(--red);border:1px solid #ffd1d8">95.2% confianza</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-top:6px">
+                    <span>Severidad sugerida: <b id="iaSev" style="color:var(--red);font-weight:800">Alta
+                            (Crítica)</b></span>
+                    <small style="color:var(--mut)">Volumen masivo / Vía pública</small>
+                </div>
+            </div>
+
             <label for="rType">Tipo de residuo</label>
             <select id="rType">
                 <option value="Plásticos y PET">Plásticos y PET</option>
@@ -289,32 +585,139 @@
                 <option value="Foco infeccioso">Foco infeccioso</option>
             </select>
 
-            <label for="rDesc">Descripción o referencia</label>
-            <textarea id="rDesc" placeholder="Ej. Acumulación de bolsas plásticas y ramas frente al parque vecinal..."></textarea>
+            <!-- Tamaño aproximado (US06) -->
+            <label for="rSize">Tamaño estimado del acumulado</label>
+            <select id="rSize">
+                <option value="Pequeño (Bolsa o caja puntual)">Pequeño (Bolsa o caja puntual)</option>
+                <option value="Mediano (Varios sacos / 1-3 m³)" selected>Mediano (Varios sacos / 1-3 m³)</option>
+                <option value="Grande (Desmonte mayor / camión requerido)">Grande (Desmonte mayor / camión requerido)
+                </option>
+            </select>
 
-            <label for="rPhoto">Fotografía de evidencia</label>
-            <input id="rPhoto" type="file" accept="image/*" capture="environment">
+            <!-- Riesgos identificados (US07) -->
+            <label>Riesgos sanitarios o vecinales observados</label>
+            <div class="risk-grid">
+                <label class="risk-label"><input type="checkbox" id="riskPlagas" value="Presencia de plagas/vectores">
+                    🐀 Plagas o roedores</label>
+                <label class="risk-label"><input type="checkbox" id="riskOlores" value="Malos olores fuertes"> 🦨 Malos
+                    olores</label>
+                <label class="risk-label"><input type="checkbox" id="riskColegio" value="Cerca de escuela/mercado"> 🏫
+                    Cerca de escuela o mercado</label>
+                <label class="risk-label"><input type="checkbox" id="riskSanitario"
+                        value="Lixiviados / riesgo biológico"> ⚠️ Riesgo sanitario</label>
+            </div>
 
-            <label>Ubicación del incidente</label>
+            <label for="rDesc">Descripción o referencia (opcional, máx. 200 caracteres)</label>
+            <textarea id="rDesc" maxlength="200"
+                placeholder="Ej. Acumulación frente a la vereda del parque vecinal..."></textarea>
+            <div style="display:flex;justify-content:space-between;font-size:.75rem;color:var(--mut);margin-top:2px">
+                <span>Referencia del lugar</span>
+                <span id="descCount">0 / 200</span>
+            </div>
+
+            <label>Ubicación del incidente (US03)</label>
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
-                <button class="btn" id="locBtn" type="button" style="padding:6px 12px;font-size:.82rem">📍 Usar mi ubicación actual</button>
+                <button class="btn" id="locBtn" type="button" style="padding:6px 12px;font-size:.82rem">📍 Usar mi
+                    ubicación actual</button>
                 <span style="font-size:.78rem;color:var(--mut)">O haz clic en el mapa</span>
             </div>
-            <div id="pickMap" style="height:200px;border-radius:10px;border:1px solid var(--line);margin-bottom:6px"></div>
+            <div id="pickMap" style="height:190px;border-radius:10px;border:1px solid var(--line);margin-bottom:6px">
+            </div>
             <div class="hint" id="rHint">Haz clic o toca en el mapa para marcar el punto exacto de la incidencia.</div>
 
+            <!-- Privacidad / Anónimo (US31) -->
+            <div style="margin:12px 0 6px">
+                <label class="risk-label" style="background:#fff">
+                    <input type="checkbox" id="rAnon"> Ocultar mis datos personales (reportar como Vecino anónimo)
+                </label>
+            </div>
+
             <div class="err" id="repErr" role="alert"></div>
-            <button class="btn p" id="repGo" style="width:100%;justify-content:center;margin-top:10px">Enviar reporte a revisión</button>
+            <button class="btn p" id="repReviewBtn" type="button"
+                style="width:100%;justify-content:center;margin-top:10px">Revisar reporte →</button>
         </div>
     </div>
 
-    <!-- Modal "Mis Reportes" -->
+    <!-- Modal de Revisión Previa (US11) -->
+    <div class="ov" id="reviewOv" aria-hidden="true">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="reviewTitle" style="max-width:500px">
+            <button class="x" data-close aria-label="Cerrar revisión">×</button>
+            <h3 id="reviewTitle">Revisar información del reporte</h3>
+            <p class="sub" style="font-size:.85rem">Verifica que los datos sean correctos antes del envío final.</p>
+            <div id="reviewDetails"
+                style="margin:16px 0;font-size:.88rem;display:flex;flex-direction:column;gap:10px;background:var(--g0);padding:14px;border-radius:10px;border:1px solid var(--line)">
+                <!-- Dynamic Review content -->
+            </div>
+            <div style="display:flex;gap:10px">
+                <button class="btn" id="reviewEditBtn" type="button" style="flex:1;justify-content:center">← Editar
+                    información</button>
+                <button class="btn p" id="reviewSendBtn" type="button" style="flex:1;justify-content:center">Confirmar y
+                    enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Confirmación de Envío (US12) -->
+    <div class="ov" id="confirmOv" aria-hidden="true">
+        <div class="modal" role="dialog" aria-modal="true" style="max-width:440px;text-align:center">
+            <div
+                style="width:56px;height:56px;border-radius:50%;background:var(--g1);color:var(--g7);font-size:26px;display:flex;align-items:center;justify-content:center;margin:0 auto 12px">
+                ✓</div>
+            <h3>¡Reporte registrado exitosamente!</h3>
+            <p class="sub" style="font-size:.88rem;margin:8px 0 16px">La incidencia ha sido publicada en el mapa
+                telegráfico y notificada a la central de limpieza.</p>
+            <div
+                style="background:var(--g0);padding:12px;border-radius:10px;border:1px solid var(--line);margin-bottom:18px">
+                <small style="color:var(--mut)">Código de seguimiento único:</small>
+                <div id="confirmCode" style="font-size:1.2rem;font-weight:800;color:var(--g9);margin:4px 0">
+                    #GA-2026-0000</div>
+                <span class="tag p" id="confirmStatus">Estado: Pendiente</span>
+            </div>
+            <div style="display:flex;gap:10px">
+                <button class="btn" data-close style="flex:1;justify-content:center">Volver al mapa</button>
+                <button class="btn p" id="confirmMineBtn" style="flex:1;justify-content:center">Ir a Mis
+                    reportes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal "Mis Reportes" (US13, US24, US27) -->
     <div class="ov" id="mineOv" aria-hidden="true">
-        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="mineTitle">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="mineTitle" style="max-width:540px">
             <button class="x" data-close aria-label="Cerrar listado de mis reportes">×</button>
             <h3 id="mineTitle">Mis reportes ambientales</h3>
-            <p class="sub" style="font-size:.85rem">Historial de incidencias registradas desde este navegador. Toca una para ubicarla en el mapa.</p>
+            <p class="sub" style="font-size:.85rem">Historial de incidencias registradas. Toca una para ubicarla en el
+                mapa.</p>
+
+            <!-- Pestañas de estado (US24) -->
+            <div class="tabs" id="mineTabs" style="margin:12px 0 8px">
+                <button class="on" data-tab="active">Activos</button>
+                <button data-tab="done">Solucionados</button>
+            </div>
+
             <div id="mineList" style="margin-top:12px;max-height:360px;overflow-y:auto"></div>
+        </div>
+    </div>
+
+    <!-- Modal de Denuncia de Reporte (US45) -->
+    <div class="ov" id="denounceOv" aria-hidden="true">
+        <div class="modal" role="dialog" aria-modal="true" style="max-width:440px">
+            <button class="x" data-close aria-label="Cerrar modal de denuncia">×</button>
+            <h3>Denunciar reporte inapropiado</h3>
+            <p class="sub" style="font-size:.85rem">Ayuda a mantener la veracidad de la plataforma informando
+                inconsistencias.</p>
+            <label for="denounceReason">Motivo de la denuncia</label>
+            <select id="denounceReason">
+                <option value="Información o foto falsa">Información o fotografía falsa</option>
+                <option value="Punto duplicado o spam">Punto duplicado o spam</option>
+                <option value="Contenido ofensivo o inapropiado">Contenido ofensivo o inapropiado</option>
+                <option value="Otro">Otro motivo</option>
+            </select>
+            <label for="denounceComment">Detalles adicionales</label>
+            <textarea id="denounceComment"
+                placeholder="Explica brevemente por qué denuncias este reporte..."></textarea>
+            <button class="btn p" id="denounceSendBtn" style="width:100%;justify-content:center;margin-top:10px">Enviar
+                denuncia</button>
         </div>
     </div>
 
@@ -325,5 +728,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
     <script src="assets/scripts/main.js"></script>
 </body>
-</html>
 
+</html>
