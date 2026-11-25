@@ -87,11 +87,151 @@ h2 {
     border-radius: 99px;
 }
 
+/* Indicador en vivo y animaciones de pulso (Heurística #1) */
 .chip i {
-    width: 7px;
-    height: 7px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     background: var(--g5);
+    animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(31, 164, 99, 0.6); }
+    70% { transform: scale(1.15); box-shadow: 0 0 0 7px rgba(31, 164, 99, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(31, 164, 99, 0); }
+}
+
+@keyframes pulseRed {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(229, 56, 79, 0.7); }
+    70% { transform: scale(1.2); box-shadow: 0 0 0 8px rgba(229, 56, 79, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(229, 56, 79, 0); }
+}
+
+/* Pines en el mapa con efecto de pulso en incidencias críticas */
+.pin {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    transition: transform .2s ease;
+}
+
+.pin.sel {
+    transform: scale(1.35);
+    border-color: #000;
+}
+
+/* Efecto de elevación interactiva en tarjetas (Microinteracción de calidad) */
+.card {
+    transition: transform .24s cubic-bezier(0.16, 1, 0.3, 1), box-shadow .24s ease, border-color .24s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px -6px rgba(16, 35, 26, 0.08);
+}
+
+.btn {
+    transition: transform .15s ease, background-color .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+/* Animación de escaneo láser en la foto (Visión artificial / Heurística #1) */
+@keyframes scanSweep {
+    0% { top: 0; opacity: .7; }
+    50% { top: 92%; opacity: 1; }
+    100% { top: 0; opacity: .7; }
+}
+
+.photo-scan-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #1fa463, #b7f0d0, #1fa463, transparent);
+    box-shadow: 0 0 8px #1fa463;
+    animation: scanSweep 1.2s infinite ease-in-out;
+    pointer-events: none;
+}
+
+/* Revelado suave al hacer scroll (Scroll Reveal) */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .55s cubic-bezier(0.16, 1, 0.3, 1), transform .55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Acordeón de Preguntas Frecuentes FAQ (Heurística #10 Ayuda y Documentación) */
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.faq-item {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color .2s, box-shadow .2s;
+}
+
+.faq-item.open {
+    border-color: var(--g5);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+}
+
+.faq-q {
+    width: 100%;
+    padding: 16px 20px;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .95rem;
+    font-weight: 700;
+    color: var(--g9);
+    cursor: pointer;
+    text-align: left;
+}
+
+.faq-q span.arrow {
+    transition: transform .25s ease;
+    font-size: .8rem;
+    color: var(--mut);
+}
+
+.faq-item.open .faq-q span.arrow {
+    transform: rotate(180deg);
+    color: var(--g7);
+}
+
+.faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s cubic-bezier(0, 1, 0, 1), padding .25s ease;
+    padding: 0 20px;
+    font-size: .88rem;
+    color: var(--mut);
+    line-height: 1.6;
+}
+
+.faq-item.open .faq-a {
+    max-height: 250px;
+    padding: 0 20px 16px;
+    transition: max-height .35s ease-in-out, padding .2s ease;
 }
 
 .sub {
@@ -142,7 +282,7 @@ h2 {
     position: sticky;
     top: 0;
     z-index: 900;
-    background: rgba(255, 255, 255, .9);
+    background: rgba(255, 255, 255, .92);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--line);
 }
@@ -158,9 +298,10 @@ h2 {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1.15rem;
     color: var(--g9);
+    letter-spacing: -.02em;
 }
 
 .logo img {
@@ -171,17 +312,37 @@ h2 {
 
 .nav ul {
     display: flex;
-    gap: 30px;
+    gap: 36px;
     list-style: none;
     padding: 0;
     margin: 0;
-    font-size: .88rem;
+    font-size: .92rem;
     color: var(--mut);
     font-weight: 500;
 }
 
+.nav ul a {
+    transition: color .2s ease;
+}
+
 .nav ul a:hover {
     color: var(--g9);
+    font-weight: 600;
+}
+
+#authBtn {
+    padding: 9px 18px;
+    border-radius: 99px;
+    font-size: .88rem;
+    font-weight: 600;
+    border: 1px solid var(--line);
+    transition: all .2s ease;
+}
+
+#authBtn:hover {
+    border-color: var(--g7);
+    color: var(--g9);
+    background: var(--g0);
 }
 
 .burger {
@@ -807,6 +968,436 @@ textarea {
 
 .mi small {
     color: var(--mut);
+}
+
+/* ==========================================
+   COMPONENTES AVANZADOS PARA HISTORIAS DE USUARIO
+   ========================================== */
+
+/* Barra de herramientas y búsqueda del mapa */
+.map-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    background: var(--g0);
+    padding: 12px 18px;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 6px 12px;
+    flex: 1;
+    min-width: 240px;
+    max-width: 380px;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: .88rem;
+}
+
+.filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+.filter-select {
+    padding: 7px 12px;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    background: #fff;
+    font-size: .84rem;
+    font-weight: 500;
+    color: var(--ink);
+    cursor: pointer;
+}
+
+.tool-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    background: #fff;
+    font-size: .82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .15s;
+}
+
+.tool-toggle.active {
+    background: var(--g9);
+    color: #fff;
+    border-color: var(--g9);
+}
+
+/* Panel de conteo de estados */
+.status-counters {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+}
+
+.counter-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: .82rem;
+    font-weight: 600;
+    background: #fff;
+    border: 1px solid var(--line);
+}
+
+.counter-pill span {
+    font-size: .95rem;
+    font-weight: 800;
+}
+
+/* Línea de tiempo de estados (Timeline) */
+.timeline {
+    display: flex;
+    justify-content: space-between;
+    margin: 16px 0 12px;
+    position: relative;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 14px;
+    left: 20px;
+    right: 20px;
+    height: 3px;
+    background: var(--line);
+    z-index: 1;
+}
+
+.timeline-step {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    font-size: .72rem;
+    color: var(--mut);
+    font-weight: 600;
+}
+
+.timeline-dot {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .75rem;
+    font-weight: 700;
+    transition: .2s;
+}
+
+.timeline-step.completed .timeline-dot {
+    background: var(--g5);
+    border-color: var(--g5);
+    color: #fff;
+}
+
+.timeline-step.current .timeline-dot {
+    background: #fff;
+    border-color: var(--g7);
+    color: var(--g7);
+    box-shadow: 0 0 0 4px var(--g1);
+}
+
+.timeline-step.current {
+    color: var(--g9);
+    font-weight: 700;
+}
+
+/* Vista de Lista de incidencias */
+.incidents-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    max-height: 520px;
+    overflow-y: auto;
+    padding-right: 6px;
+}
+
+.incident-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    cursor: pointer;
+    transition: .18s;
+}
+
+.incident-card:hover {
+    border-color: var(--g5);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Caja de advertencia de reporte duplicado */
+.dup-alert {
+    background: #fff8e6;
+    border: 1px solid #ffd166;
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin: 10px 0;
+    font-size: .84rem;
+    color: #7a5000;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Caja de asistencia de IA */
+.ia-preview {
+    background: var(--g0);
+    border: 1px solid var(--g1);
+    border-radius: 10px;
+    padding: 12px;
+    margin: 10px 0;
+    font-size: .84rem;
+}
+
+.ia-preview b {
+    color: var(--g9);
+}
+
+/* Calificación con estrellas */
+.star-rating {
+    display: flex;
+    gap: 6px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    margin: 8px 0;
+}
+
+.star {
+    color: #ccc;
+    transition: .15s;
+}
+
+.star.active, .star:hover {
+    color: #f5b400;
+}
+
+/* Checkboxes de riesgos */
+.risk-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 8px 0 14px;
+}
+
+.risk-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: .82rem;
+    font-weight: 500;
+    cursor: pointer;
+    background: var(--g0);
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px solid var(--line);
+}
+
+.risk-label input {
+    accent-color: var(--g7);
+}
+
+/* Tarjetas de Jornadas y Actividades */
+.act-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 24px;
+}
+
+.act-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: .2s;
+}
+
+.act-card:hover {
+    border-color: var(--g5);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.act-meta {
+    display: flex;
+    gap: 12px;
+    font-size: .82rem;
+    color: var(--mut);
+    margin: 10px 0 16px;
+}
+
+/* Tabla de Vecinos Destacados */
+.rank-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 18px;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+}
+
+.rank-table th, .rank-table td {
+    padding: 12px 18px;
+    text-align: left;
+    font-size: .88rem;
+    border-bottom: 1px solid var(--line);
+}
+
+.rank-table th {
+    background: var(--g0);
+    font-weight: 700;
+    color: var(--g9);
+}
+
+.medal {
+    font-size: 1.1rem;
+    font-weight: 800;
+    width: 30px;
+}
+
+/* Botones y acciones de confirmación */
+.btn-sm {
+    padding: 6px 12px;
+    font-size: .8rem;
+    border-radius: 8px;
+}
+
+/* Selector de Rol en Autenticación (Ciudadano vs Municipalidad) */
+.role-switch {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    background: var(--g0);
+    padding: 5px;
+    border-radius: 12px;
+    border: 1px solid var(--line);
+    margin-bottom: 6px;
+}
+
+.role-btn {
+    border: none;
+    background: transparent;
+    padding: 9px 10px;
+    border-radius: 9px;
+    font-size: .82rem;
+    font-weight: 600;
+    color: var(--mut);
+    cursor: pointer;
+    transition: all .18s ease;
+}
+
+.role-btn.active {
+    background: var(--g9);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(15, 77, 46, 0.2);
+}
+
+/* Panel exclusivo de Gestión Municipal en el detalle de incidencia */
+.muni-panel {
+    background: #f0f7f3;
+    border: 1.5px solid var(--g5);
+    border-radius: 12px;
+    padding: 14px;
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.muni-panel-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .82rem;
+    font-weight: 800;
+    color: var(--g9);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 6px;
+}
+
+.muni-status-btns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+}
+
+.muni-st-btn {
+    padding: 7px 6px;
+    font-size: .75rem;
+    font-weight: 700;
+    border-radius: 8px;
+    border: 1px solid var(--line);
+    background: #fff;
+    cursor: pointer;
+    transition: .15s;
+}
+
+.muni-st-btn:hover {
+    border-color: var(--g7);
+}
+
+.muni-st-btn.active-c {
+    background: var(--red);
+    color: #fff;
+    border-color: var(--red);
+}
+
+.muni-st-btn.active-p {
+    background: var(--yel);
+    color: #10231a;
+    border-color: var(--yel);
+}
+
+.muni-st-btn.active-a {
+    background: var(--ok);
+    color: #fff;
+    border-color: var(--ok);
 }
 
 /* Responsive */
